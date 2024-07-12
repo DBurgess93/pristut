@@ -1,9 +1,12 @@
 <script>
-  import "../app.css";
-import '@fontsource-variable/dm-sans';
+	import '../app.css';
+	import '@fontsource-variable/dm-sans';
 	import { PrismicPreview } from '@prismicio/svelte/kit';
 	import { page } from '$app/stores';
 	import { repositoryName } from '$lib/prismicio';
+
+  import Header from '$lib/components/Header.svelte'
+  import Footer from '$lib/components/Footer.svelte'
 </script>
 
 <svelte:head>
@@ -19,7 +22,9 @@ import '@fontsource-variable/dm-sans';
 		<meta name="twitter:card" content="summary_large_image" />
 	{/if}
 </svelte:head>
+<Header settings={$page.data.settings} />
 <main>
 	<slot />
 </main>
+<Footer settings={$page.data.settings} />
 <PrismicPreview {repositoryName} />
