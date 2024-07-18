@@ -9,8 +9,10 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Consectetur id proident ea quis. Incididunt magna pariatur veniam non occaecat amet qui esse qui incididunt mollit."
-						}
+							"text": "Consectetur id proident ea quis. Incididunt magna pariatur veniam non occaecat amet qui esse qui incididunt mollit. yo.",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			},
@@ -23,8 +25,8 @@
 			},
 			"button_label": {
 				"__TYPE__": "FieldContent",
-				"value": "barn",
-				"type": "Text"
+				"type": "Text",
+				"value": "barnicle"
 			},
 			"image": {
 				"origin": {
