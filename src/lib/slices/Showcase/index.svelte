@@ -8,6 +8,8 @@
 	import IconGear from '~icons/ph/gear';
 	import IconCycle from '~icons/ph/arrows-clockwise';
 
+  import SpanHeading from './SpanHeading.svelte';
+
 	export let slice: Content.ShowcaseSlice;
 
 	const icons = {
@@ -22,7 +24,7 @@
 	/>
 	{#if slice.primary.heading}
 		<h2 class="text-balance text-center text-5xl font-medium md:text-7xl">
-			<PrismicRichText field={slice.primary.heading} />
+			<PrismicRichText field={slice.primary.heading} components={{ heading2: SpanHeading }} />
 		</h2>
 	{/if}
 	<div
