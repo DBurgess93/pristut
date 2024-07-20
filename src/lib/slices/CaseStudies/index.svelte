@@ -7,7 +7,6 @@
 	export let slice;
 	/** @type {import("@prismicio/client").Content.CaseStudyDocument[]} */
 	export let caseStudies = [];
-	console.log('yoyoyo:', slice.primary.case_studies);
 </script>
 
 <Bounded data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
@@ -19,8 +18,10 @@
 	</div>
 	<div class="mt-20 grid gap-16">
 		{#each caseStudies as caseStudy, index}
-			<div class="relative">
-				<div class="flex">
+			<div
+				class="group relative grid gap-4 opacity-85 transition-opacity duration-300 hover:cursor-pointer hover:opacity-100 md:grid-cols-2 md:gap-8 lg:grid-cols-3"
+			>
+				<div class="col-span-1 flex flex-col justify-center gap-4">
 					<h3 class="text-4xl">
 						<PrismicText field={caseStudy.data.company} />
 					</h3>
