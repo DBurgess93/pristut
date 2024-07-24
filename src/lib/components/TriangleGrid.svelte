@@ -49,6 +49,39 @@
 				}
 			]
 		});
+    // loop animation
+    tl.to('.triangle-grid-item', {
+      delay: 6,
+      repeat: -1,
+      repeatDelay: 6,
+			keyframes: [
+				{
+					opacity: 0.4,
+					rotate: '+=180',
+					color: '#A78BFA',
+					scale: 3,
+					duration: 0.6,
+					stagger: {
+						amount: 2,
+						grid: grid,
+						from: 'center'
+					}
+				},
+				{
+					opacity: 0.2,
+					rotate: '+=180',
+					color: '#fff',
+					scale: 1,
+					delay: -2,
+					duration: 0.6,
+					stagger: {
+						amount: 3,
+						grid: grid,
+						from: 'center'
+					}
+				}
+			]
+		});
 	});
 </script>
 
