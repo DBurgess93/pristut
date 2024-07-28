@@ -11,6 +11,16 @@
 	export let slice: Content.HeroSlice;
 
 	onMount(() => {
+    const prefersReducedMoiton = window.matchMedia('(prefers-reduced-motion: reduce').matches
+    if (prefersReducedMoiton) {
+      gsap.set('.hero__heading, hero__body, .hero__button, .hero__image, .hero__glow', {
+        opacity: 1
+      })
+
+      return
+    }
+
+
 		const tl = gsap.timeline({ defaults: { ease: 'power2.inOut' } });
 		tl.fromTo('.hero__heading', { scale: 0.5 }, { scale: 1, opacity: 1, duration: 1.4 });
 		tl.fromTo('.hero__body', { y: 20 }, { y: 0, opacity: 1, duration: 1.2 }, '-=0.6');

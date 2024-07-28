@@ -5,6 +5,18 @@
 	const grid = [14, 30];
 
 	onMount(() => {
+		const prefersReducedMoiton = window.matchMedia('(prefers-reduced-motion: reduce').matches;
+		if (prefersReducedMoiton) {
+			gsap.set('.triangle-grid', {
+				opacity: 1
+			});
+			gsap.set('.triangle-grid-item', {
+				opacity: 0.2,
+				scale: 1
+			});
+			return;
+		}
+
 		gsap.set('.triangle-grid-item', {
 			opacity: 0,
 			transformOrigin: 'center',
@@ -49,11 +61,11 @@
 				}
 			]
 		});
-    // loop animation
-    tl.to('.triangle-grid-item', {
-      delay: 6,
-      repeat: -1,
-      repeatDelay: 6,
+		// loop animation
+		tl.to('.triangle-grid-item', {
+			delay: 6,
+			repeat: -1,
+			repeatDelay: 6,
 			keyframes: [
 				{
 					opacity: 0.4,

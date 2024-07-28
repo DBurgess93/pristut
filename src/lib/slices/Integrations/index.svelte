@@ -27,6 +27,11 @@
 	export let slice: Content.IntegrationsSlice;
 
 	onMount(() => {
+		const prefersReducedMoiton = window.matchMedia('(prefers-reduced-motion: reduce').matches;
+		if (prefersReducedMoiton) {
+			return;
+		}
+
 		const tl = gsap.timeline({
 			repeat: -1,
 			defaults: { ease: 'power2.inOut' }
@@ -59,26 +64,30 @@
 			'-=1.4'
 		);
 
-		tl.to('.pulsing-icon', {
-			keyframes: [
-				{
-					opacity: 1,
-          duration: 1,
-					stagger: {
-						from: 'center',
-						each: 0.3
+		tl.to(
+			'.pulsing-icon',
+			{
+				keyframes: [
+					{
+						opacity: 1,
+						duration: 1,
+						stagger: {
+							from: 'center',
+							each: 0.3
+						}
 					},
-				},
-				{
-					opacity: .4,
-          duration: 1,
-					stagger: {
-						from: 'center',
-						each: 0.3
-					},
-				}
-			]
-		}, "-=2");
+					{
+						opacity: 0.4,
+						duration: 1,
+						stagger: {
+							from: 'center',
+							each: 0.3
+						}
+					}
+				]
+			},
+			'-=2'
+		);
 	});
 </script>
 
